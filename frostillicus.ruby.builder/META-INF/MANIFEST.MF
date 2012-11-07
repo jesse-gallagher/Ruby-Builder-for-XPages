@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ruby Class Builder
+Bundle-SymbolicName: frostillicus.ruby.builder; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: frostillicus.ruby.builder.Activator
+Bundle-Vendor: Jesse Gallagher
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: jruby-complete-1.6.7.jar,
+ .
