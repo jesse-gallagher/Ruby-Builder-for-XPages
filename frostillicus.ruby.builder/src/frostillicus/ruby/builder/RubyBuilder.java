@@ -17,8 +17,6 @@ public class RubyBuilder extends IncrementalProjectBuilder {
 	private final String SOURCE_DIR = "WebContent/WEB-INF/ruby-src";
 	private final String BUILD_DIR = "WebContent/WEB-INF/ruby-java";
 
-
-	private IFolder rubySource;
 	private IFolder rubyBuild;
 
 	void processRubyFile(IResource resource) throws CoreException {
@@ -86,7 +84,7 @@ public class RubyBuilder extends IncrementalProjectBuilder {
 	}
 
 	private void createPackageFolders(String packageName) throws Exception {
-		String[] bits = packageName.split("\\.");
+		String[] bits = packageName.split("/");
 		String base = "";
 		for(String bit : bits) {
 			IFolder folder = rubyBuild.getFolder(base + bit);
@@ -98,7 +96,7 @@ public class RubyBuilder extends IncrementalProjectBuilder {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "restriction" })
 	private List<Map<String, String>> compileScript(String source, String filename) {
 
 		// Create the script container and pass in a couple global variables to use
