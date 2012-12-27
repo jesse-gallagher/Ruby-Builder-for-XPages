@@ -56,6 +56,7 @@ public class RubyBuilder extends IncrementalProjectBuilder {
 						workspaceBuildFile.create(bytes, 0, null);
 					} else {
 						workspaceBuildFile.setContents(bytes, 0, null);
+						workspaceBuildFile.setLocalTimeStamp(Calendar.getInstance().getTimeInMillis());
 					}
 
 					System.out.println("Created/Modified file " + packagePath + "/" + classFileName);
